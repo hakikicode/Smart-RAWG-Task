@@ -1,15 +1,15 @@
 # Task Name: (Required) 
-task_name: 'TypeScript Template'
+task_name: 'SMART REWG Task'
 # Task Author: (Required) 
-author: 'Koii'
+author: 'Smart Open Network'
 # Task Description: (Required) 
-description: 'description'
+description: 'SMART RAWG Task is an innovative GameFi mechanism on the Koii Network designed to validate and reward node runner based on gameplay data. By running this task, participants actively contribute to the network while earning rewards in SMART tokens. This task encourages fair participation and authentic engagement within the GameFi ecosystem.'
 # Repository URL: (Required)
-repositoryUrl: 'https://github.com/koii-network/task-template' 
+repositoryUrl: 'https://github.com/hakikicode/Smart-RAWG-Task' 
 # Image URL: (Required) Will be displayed in desktop node
-imageUrl: 'imageUrl'
+imageUrl: 'https://raw.githubusercontent.com/hakikicode/SMART-Task/refs/heads/master/smart%20task.png'
 # Info URL: (Required) Will be displayed in desktop node
-infoUrl: 'infoUrl'
+infoUrl: 'https://ipfs.io/ipfs/QmZKCxY6EECLkqyrFPRTRWiL8JCPEvLwvgFQxrpjfkU2VZ'
 
 # Task executable network: (Required | DEVELOPMENT, ARWEAVE, or IPFS) : IPFS is the default and common value
 task_executable_network: 'IPFS'
@@ -33,20 +33,20 @@ minimum_stake_amount: 1.9
 task_type: 'KPL'
 
 # Token Mint Address: (ONLY task_type == KPL) Fire Token as an example here. 
-token_type: "FJG2aEPtertCXoedgteCCMmgngSZo1Zd715oNBzR7xpR"
+token_type: "HK8STMDTos4QFocyEADxwdXBrN13DCB9AcwLXsmvBthh"
 
 # Total bounty amount:  (Required) The total bounty amount that will be distributed to the task. (Not accepted in case of update task).
-total_bounty_amount: 10
+total_bounty_amount: 250000
 
 # Bounty amount per round: (Required) Every round's maximum distribution, you can decide the logics in your task. 
-bounty_amount_per_round: 0.1
+bounty_amount_per_round: 1.1
 
 # Allowed failed distributions: (Required) Number of times re-submission is allowed for the distribution list in case of an audit, it is also the rounds of submission it will keep. 
 allowed_failed_distributions: 3
 
 # Space: (Required) Expected Task Data Size in MBs for the account size. 
 # Minimum: 1 for production, 0.1 for testing; Calculation Details: https://www.koii.network/docs/develop/command-line-tool/create-task-cli/create-task#space
-space: 0.1
+space: 2
 
 # Requirement Tags: (Optional): To add more global variables and task variables, please refer to the type, value, description format shown below.
 requirementsTags:
@@ -56,14 +56,11 @@ requirementsTags:
     value: '5 GB'
   - type: STORAGE
     value: '5 GB'
-  - type: TASK_VARIABLE
-    value: 'EXAMPLE_VARIABLE'
-    description: 'The password of your volunteer Twitter account.'
 
 # Tags: You can select the tags here via https://www.koii.network/docs/develop/command-line-tool/create-task-cli/create-task#tags
-tags: ["AI", "ML"] 
+tags: ["Data Validation", "Gaming"] 
 # Environment: (Required | TEST or PRODUCTION) Production mode will expose your task to all the task runners. 
-environment: "TEST"
+environment: "PRODUCTION"
 
 #################################### BELOW IS FOR UPDATE TASK ONLY ####################################
 # Old Task ID: (ONLY for task update) 
