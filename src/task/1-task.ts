@@ -1,7 +1,7 @@
 import { namespaceWrapper } from "@_koii/namespace-wrapper";
 import fetch from "node-fetch";
 
-const RAWG_API_KEY = "151428fad2484f80a3db230a7eabed48"; // RAWG API key
+const RAWG_API_KEY = "92f493e55c794f409435e8c95b94c20e"; // RAWG API key
 
 export async function task(roundNumber: number): Promise<void> {
   try {
