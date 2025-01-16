@@ -9,7 +9,7 @@ repositoryUrl: 'https://github.com/hakikicode/Smart-RAWG-Task'
 # Image URL: (Required) Will be displayed in desktop node
 imageUrl: 'https://raw.githubusercontent.com/hakikicode/SMART-Task/refs/heads/master/smart%20task.png'
 # Info URL: (Required) Will be displayed in desktop node
-infoUrl: 'https://ipfs.io/ipfs/QmZKCxY6EECLkqyrFPRTRWiL8JCPEvLwvgFQxrpjfkU2VZ'
+infoUrl: 'https://smartopenet.vercel.app/'
 
 # Task executable network: (Required | DEVELOPMENT, ARWEAVE, or IPFS) : IPFS is the default and common value
 task_executable_network: 'IPFS'
