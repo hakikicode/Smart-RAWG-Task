@@ -1,9 +1,9 @@
 # Task Name: (Required) 
-task_name: 'SMART RAWG Task'
+task_name: 'SMART Task'
 # Task Author: (Required) 
 author: 'Smart Open Network'
 # Task Description: (Required) 
-description: 'SMART RAWG Task is an innovative GameFi mechanism on the Koii Network designed to validate and reward node runner based on gameplay data. By running this task, participants actively contribute to the network while earning rewards in SMART tokens. This task encourages fair participation and authentic engagement within the GameFi ecosystem.'
+description: 'SMART  Task is an innovative GameFi mechanism on the Koii Network designed to validate and reward node runner based on gameplay data. By running this task, participants actively contribute to the network while earning rewards in SMART tokens. This task encourages fair participation and authentic engagement within the GameFi ecosystem.'
 # Repository URL: (Required)
 repositoryUrl: 'https://github.com/hakikicode/Smart-RAWG-Task' 
 # Image URL: (Required) Will be displayed in desktop node
@@ -67,4 +67,4 @@ environment: "PRODUCTION"
 task_id: ''
 
 # Migration Description: (ONLY for task update)
-migrationDescription: 'GameFi RAWG Games , validating the gameplay data'
+migrationDescription: 'GameFi RAWG, FreeToGames & other Games , validating the gameplay data'
