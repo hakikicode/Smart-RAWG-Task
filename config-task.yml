@@ -3,13 +3,13 @@ task_name: 'SMART Task'
 # Task Author: (Required) 
 author: 'Smart Open Network'
 # Task Description: (Required) 
-description: 'SMART  Task is an innovative GameFi mechanism on the Koii Network designed to validate and reward node runner based on gameplay data. By running this task, participants actively contribute to the network while earning rewards in SMART tokens. This task encourages fair participation and authentic engagement within the GameFi ecosystem.'
+description: 'SMART  Task with an innovative GameFi mechanism on the Koii Network designed to get gameplay data, validate and reward node runner based on gameplay data. By running this task, participants actively contribute to the network while earning rewards in SMART tokens. This task encourages fair participation and authentic gameplay engagement within the GameFi ecosystem and serving as a decentralized storage for gameplay data.'
 # Repository URL: (Required)
 repositoryUrl: 'https://github.com/hakikicode/Smart-RAWG-Task' 
 # Image URL: (Required) Will be displayed in desktop node
 imageUrl: 'https://raw.githubusercontent.com/hakikicode/SMART-Task/refs/heads/master/smart%20task.png'
 # Info URL: (Required) Will be displayed in desktop node
-infoUrl: 'https://smartopenet.vercel.app/'
+infoUrl: 'https://www.koii.network/ocean/SMART'
 
 # Task executable network: (Required | DEVELOPMENT, ARWEAVE, or IPFS) : IPFS is the default and common value
 task_executable_network: 'IPFS'
@@ -18,16 +18,16 @@ task_executable_network: 'IPFS'
 task_audit_program: 'dist/main.js'
 
 # Round time: (Required) Duration of task, measured in slots (with each slot approximately equal to 408ms).
-round_time: 1200
+round_time: 3000
 
 # Audit window: (Required) The audit window should be greater than 1/3 of the round time.
-audit_window: 500
+audit_window: 1200
 
 # Submission window: (Required) The submission window should be greater than 1/3 of the round time.
-submission_window: 500
+submission_window: 1200
 
 # Minimum stake amount: (Required) The minimum amount of KOII that a user must stake in order to participate in the task.
-minimum_stake_amount: 1.9
+minimum_stake_amount: 0.01
 
 # Task Bounty Type: (Required | KOII or KPL) 
 task_type: 'KPL'
@@ -36,10 +36,10 @@ task_type: 'KPL'
 token_type: "AnYJ5HBwzLu5B5gctBHVJ2uLAXStwJGbGUDyYFH6wUQT"
 
 # Total bounty amount:  (Required) The total bounty amount that will be distributed to the task. (Not accepted in case of update task).
-total_bounty_amount: 250000
+total_bounty_amount: 500000
 
 # Bounty amount per round: (Required) Every round's maximum distribution, you can decide the logics in your task. 
-bounty_amount_per_round: 1.1
+bounty_amount_per_round: 1000
 
 # Allowed failed distributions: (Required) Number of times re-submission is allowed for the distribution list in case of an audit, it is also the rounds of submission it will keep. 
 allowed_failed_distributions: 3
@@ -51,11 +51,11 @@ space: 2
 # Requirement Tags: (Optional): To add more global variables and task variables, please refer to the type, value, description format shown below.
 requirementsTags:
   - type: CPU
-    value: '4-core'
+    value: '2-core'
   - type: RAM
-    value: '5 GB'
+    value: '1 GB'
   - type: STORAGE
-    value: '5 GB'
+    value: '1 GB'
 
 # Tags: You can select the tags here via https://www.koii.network/docs/develop/command-line-tool/create-task-cli/create-task#tags
 tags: ["Data Validation", "Gaming"] 
@@ -64,7 +64,7 @@ environment: "PRODUCTION"
 
 #################################### BELOW IS FOR UPDATE TASK ONLY ####################################
 # Old Task ID: (ONLY for task update) 
-task_id: ''
+task_id: '5zFq5auepbEmCuP7c99PRFUgvB98rFWyCdyKxTmKXMw'
 
 # Migration Description: (ONLY for task update)
-migrationDescription: 'GameFi RAWG, FreeToGames & other Games , validating the gameplay data'
+migrationDescription: 'GameFi Open Gameplay data like RAWG, FreeToGames & other Games , validating the gameplay data'

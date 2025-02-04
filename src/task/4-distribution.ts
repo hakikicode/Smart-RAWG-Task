@@ -1,10 +1,11 @@
 import { Submitter, DistributionList } from "@_koii/task-manager";
 
-export function distribution(
+export async function distribution(
   submitters: Submitter[],
   bounty: number,
   roundNumber: number
-): DistributionList {
+): Promise<DistributionList> {  // Ensure the function returns a Promise
+
   console.log(`MAKE DISTRIBUTION LIST FOR ROUND ${roundNumber}`);
 
   const distributionList: DistributionList = {};
@@ -28,5 +29,5 @@ export function distribution(
   }
 
   console.log("FINAL DISTRIBUTION LIST:", distributionList);
-  return distributionList;
+  return Promise.resolve(distributionList); // Ensure it returns a Promise
 }

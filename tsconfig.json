@@ -22,7 +22,8 @@
     "noImplicitOverride": true,
     "noPropertyAccessFromIndexSignature": true,
     /* Completeness */
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    "types": ["node"]
   },
   "include": ["src/**/*"]
 }

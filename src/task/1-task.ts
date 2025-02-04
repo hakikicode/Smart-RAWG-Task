@@ -11,57 +11,63 @@ const BACKUP_API_URLS = [
   "https://api.atlasacademy.io/export/JP/nice_servant_lore.json",
   "https://xkcd.com/info.0.json",
   "https://raw.githubusercontent.com/ByMykel/counter-strike-file-tracker/main/static/csgo_english.json",
-]; // Array of backup APIs
+]; // Backup APIs
 
 export async function task(roundNumber: number): Promise<void> {
   try {
-    console.log(`EXECUTE TASK FOR ROUND ${roundNumber}`);
+    console.log(`EXECUTING TASK FOR ROUND ${roundNumber}`);
 
-    // Primary API URL
-    const primaryUrl = "https://api.rawg.io/api/platforms?key=92f493e55c794f409435e8c95b94c20e";
-
-    // Attempt fetching from primary API
-    let data = await fetchData(primaryUrl);
-
-    // Fallback mechanism if primary API fails
-    if (!data) {
-      console.warn("Primary API failed. Switching to backup APIs...");
-      for (const url of BACKUP_API_URLS) {
-        console.log(`Attempting to fetch from backup API: ${url}`);
-        data = await fetchData(url);
-        if (data) {
-          console.log(`Successfully fetched data from backup API: ${url}`);
-          break; // Exit loop if data is successfully fetched
-        }
-      }
+    // Check if data already exists in storage
+    const storedData = await namespaceWrapper.storeGet(`round_${roundNumber}_data`);
+    if (storedData) {
+      console.log(`Data for round ${roundNumber} already exists in storage. Skipping API call.`);
+      return;
     }
 
-    // Store fetched data if available
+    // Fetch new data only if not stored
+    const data = await fetchDataFromAPIs();
     if (data) {
-      await namespaceWrapper.storeSet(
-        `round_${roundNumber}_data`,
-        JSON.stringify(data)
-      );
-      console.log(`Fetched and stored data for round ${roundNumber}`);
+      await namespaceWrapper.storeSet(`round_${roundNumber}_data`, JSON.stringify(data));
+      console.log(`Fetched and stored new data for round ${roundNumber}`);
     } else {
-      console.error("No data fetched from any API.");
+      console.error(`No valid data fetched for round ${roundNumber}`);
     }
   } catch (error) {
-    console.error("EXECUTE TASK ERROR:", (error as Error).message);
+    console.error("TASK EXECUTION ERROR:", (error as Error).message);
   }
+}
+
+async function fetchDataFromAPIs(): Promise<any> {
+  const primaryUrl = "https://api.rawg.io/api/platforms?key=ed4bdc1b0e314a4782d5ae0f8b2eb8cf";
+
+  // Try fetching from primary API
+  let data = await fetchData(primaryUrl);
+
+  // If primary API fails, try backup APIs
+  if (!data) {
+    console.warn("Primary API failed. Switching to backup APIs...");
+    for (const url of BACKUP_API_URLS) {
+      console.log(`Trying backup API: ${url}`);
+      data = await fetchData(url);
+      if (data) {
+        console.log(`Successfully fetched from backup API: ${url}`);
+        break; // Stop if valid data is found
+      }
+    }
+  }
+
+  return data;
 }
 
 async function fetchData(url: string): Promise<any> {
   try {
-    console.log(`Attempting to fetch data from: ${url}`);
+    console.log(`Fetching data from: ${url}`);
     const response = await fetch(url);
     if (!response.ok) {
-      console.warn(`Failed to fetch data from ${url}. Status: ${response.status}`);
+      console.warn(`Failed to fetch from ${url}. Status: ${response.status}`);
       return null;
     }
-    const data = await response.json();
-    console.log(`Successfully fetched data from: ${url}`);
-    return data;
+    return await response.json();
   } catch (error) {
     console.error(`Error fetching data from ${url}:`, (error as Error).message);
     return null;
